@@ -150,9 +150,9 @@
         <p style="font-size: 1.2em; line-height: 1.6;">
             <span class="rouge-marque" style="font-size: 1.4em;">ÉNIGME :</span>
             <br><br>
-            6 = 42
-            5 = 30
-            4 = 20 
+            6 = 42 <br>
+            5 = 30 <br>
+            4 = 20 <br>
             2 = ?
         </p>
 
@@ -180,7 +180,7 @@
                 </span>
             </p>
             
-            </div>
+        </div>
     </div>
 
     <script>
@@ -189,7 +189,6 @@
         var tentativesMax = 3;
         
         // LISTE DES RÉPONSES POSSIBLES (EN MAJUSCULES)
-        // Le code acceptera : "3", "TROIS", "Trois", "3 minutes", etc.
         var reponsesPossibles = ["6", "SIX"]; 
         // ---------------------
 
@@ -211,46 +210,4 @@
             var saisieNettoye = saisieUtilisateur.trim().toUpperCase();
 
             // 4. Vérifier si la saisie est dans la liste des réponses acceptées
-            if (reponsesPossibles.includes(saisieNettoye)) {
-                
-                // --- VICTOIRE ---
-                document.getElementById("contenu-secret").style.display = "block";
-                document.getElementById("message-erreur").style.display = "none";
-                document.getElementById("message-bloque").style.display = "none";
-                document.getElementById("compteur-affichage").style.display = "none";
-                
-                champSaisie.style.display = "none";
-                bouton.style.display = "none";
-
-            } else {
-                
-                // --- ÉCHEC ---
-                if (tentativesActuelles >= tentativesMax) {
-                    // TROP D'ESSAIS -> BLOCAGE
-                    document.getElementById("message-erreur").style.display = "none";
-                    document.getElementById("message-bloque").style.display = "block";
-                    
-                    champSaisie.disabled = true;
-                    bouton.disabled = true;
-                    bouton.innerText = "BLOQUÉ";
-                    champSaisie.value = "ACCÈS REFUSÉ";
-                } else {
-                    // JUSTE UNE ERREUR
-                    document.getElementById("message-erreur").style.display = "block";
-                    champSaisie.value = "";
-                    champSaisie.focus();
-                }
-            }
-        }
-        
-        // Activer la touche Entrée
-        document.getElementById("codeSaisi").addEventListener("keypress", function(event) {
-            var bouton = document.getElementById("boutonValider");
-            if (event.key === "Enter" && !bouton.disabled) {
-                verifierCode();
-            }
-        });
-    </script>
-
-</body>
-</html>
+            if (reponsesPossibles.includes(saisieNetto
