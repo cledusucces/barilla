@@ -150,7 +150,7 @@
         <p style="font-size: 1.2em; line-height: 1.6;">
             <span class="rouge-marque" style="font-size: 1.4em;">ÉNIGME :</span>
             <br><br>
-            Si 3 écaillers ouvrent 3 bourriches d’huîtres en 3 minutes, En combien de minutes 6 écaillers ouvriront-ils 6 bourriches d'huîtres ?
+            Un père et un fils ont à eux deux 36 ans. Sachant que le père a 30 ans de plus que le fils, quel âge a le fils ?
         </p>
 
         <div id="compteur-affichage">Tentative : 0 sur 3</div>
@@ -171,7 +171,7 @@
             <h2 class="titre-succes">FÉLICITATION</h2>
             <p class="indice-text">
                 Voici votre indice :<br><br>
-                Un marin vous attend.
+                Observez son accoutrement
                 <span class="petit-texte">
                     Reportez cet indice sur votre roadbook, il vous sera utile.
                 </span>
