@@ -179,7 +179,6 @@
                     Reportez cet indice sur votre roadbook, il vous sera utile.
                 </span>
             </p>
-            
         </div>
     </div>
 
@@ -210,4 +209,46 @@
             var saisieNettoye = saisieUtilisateur.trim().toUpperCase();
 
             // 4. Vérifier si la saisie est dans la liste des réponses acceptées
-            if (reponsesPossibles.includes(saisieNetto
+            if (reponsesPossibles.includes(saisieNettoye)) {
+                
+                // --- VICTOIRE ---
+                document.getElementById("contenu-secret").style.display = "block";
+                document.getElementById("message-erreur").style.display = "none";
+                document.getElementById("message-bloque").style.display = "none";
+                document.getElementById("compteur-affichage").style.display = "none";
+                
+                champSaisie.style.display = "none";
+                bouton.style.display = "none";
+
+            } else {
+                
+                // --- ÉCHEC ---
+                if (tentativesActuelles >= tentativesMax) {
+                    // TROP D'ESSAIS -> BLOCAGE
+                    document.getElementById("message-erreur").style.display = "none";
+                    document.getElementById("message-bloque").style.display = "block";
+                    
+                    champSaisie.disabled = true;
+                    bouton.disabled = true;
+                    bouton.innerText = "BLOQUÉ";
+                    champSaisie.value = "ACCÈS REFUSÉ";
+                } else {
+                    // JUSTE UNE ERREUR
+                    document.getElementById("message-erreur").style.display = "block";
+                    champSaisie.value = "";
+                    champSaisie.focus();
+                }
+            }
+        }
+        
+        // Activer la touche Entrée
+        document.getElementById("codeSaisi").addEventListener("keypress", function(event) {
+            var bouton = document.getElementById("boutonValider");
+            if (event.key === "Enter" && !bouton.disabled) {
+                verifierCode();
+            }
+        });
+    </script>
+
+</body>
+</html>
